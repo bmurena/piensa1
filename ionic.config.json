@@ -1,0 +1,7 @@
+{
+  "name": "GamificacionBaseDeDatos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
