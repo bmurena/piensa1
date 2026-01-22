@@ -11,7 +11,7 @@
 }
 
 ion-toolbar {
-  height: 80px;
+  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,18 +29,31 @@ ion-toolbar {
 }
 
 .nav-links ion-router-link {
+ text-decoration: none;
   color: #e0e0e0;
-  text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
   text-transform: uppercase;
   position: relative;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
+
 
 .nav-links ion-router-link:hover {
   color: #3c39e6;
 }
 
+.nav-links a:hover::after {
+ position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #3c39e6;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);;
+}
 /* ================= CONTENEDOR ================= */
 .quiz-container {
   max-width: 900px;
@@ -51,38 +64,44 @@ ion-toolbar {
 /* ================= SELECTOR DE NIVELES ================= */
 .levels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 18px;
-  max-width: 520px;
-  margin: 0 auto;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 26px;
+  max-width: 700px;
+  margin: 60px auto 0;
+  justify-items: center;
 }
 
 .level-box {
+  width: 120px;
+  height: 120px;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 20px 0;
-  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .level-box span {
-  font-size: 12px;
+  font-size: 13px;
   color: #bdbdbd;
   letter-spacing: 1px;
 }
 
 .level-box strong {
-  display: block;
-  font-size: 28px;
+  font-size: 34px;
+  margin-top: 6px;
   color: #ffffff;
-  margin-top: 4px;
 }
 
 .level-box:hover {
   background: #3c39e6;
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(60, 57, 230, 0.4);
 }
+
 
 /* ================= QUIZ ================= */
 ion-card {
