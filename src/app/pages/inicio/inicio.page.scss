@@ -1,3 +1,78 @@
+.hero-text {
+  animation: heroFade 1s ease forwards;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.subtitle {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.hero-text h1 {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.25s;
+}
+
+.hero-text p {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.45s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-text h1 span {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text h1 span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(60, 57, 230, 0.45),
+    transparent
+  );
+  animation: shineText 3s ease-in-out infinite;
+}
+
+@keyframes shineText {
+  0% { left: -120%; }
+  50% { left: 120%; }
+
+}
+.hero-text h1 {
+  transition: transform 0.3s ease;
+}
+
+.hero-text h1:hover {
+  transform: translateY(-3px);
+}
 /* Fondo general */
 .home-content {
   --background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
@@ -109,17 +184,14 @@ ion-toolbar {
 }
 
 /* ===== IMAGEN DERECHA ===== */
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-visual img {
+  animation: glow 4s ease-in-out infinite;
 }
 
-.hero-visual img {
-  width: 520px;
-  max-width: 100%;
-  transform: translateY(10px);
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.65));
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 20px rgba(88, 101, 242, 0.3)); }
+  50% { filter: drop-shadow(0 0 45px rgba(88, 101, 242, 0.7)); }
+  100% { filter: drop-shadow(0 0 20px rgba(88, 101, 242, 0.3)); }
 }
 
 /* ===== FONDO OSCURO SUAVE ===== */
@@ -176,17 +248,69 @@ ion-toolbar {
 /* Botón login */
 .login-btn {
   justify-self: end;
+
+  /* Colores base */
   --border-color: #4c6fff;
   --color: #4c6fff;
-  --border-radius: 30px;
+  --background: transparent;
+
+  /* Forma */
+  --border-radius: 150px;
+  height: 44px;
+  padding: 0 26px;
+
+  /* Texto */
   font-size: 14px;
-  padding: 0 20px;
-  height: 42px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+
+  /* Animaciones */
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+
+  /* Glow suave */
+  box-shadow: 0 0 0 rgba(76, 111, 255, 0);
+}
+
+/* ✨ Efecto glow animado */
+.login-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(76, 111, 255, 0.4),
+    transparent
+    
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
 }
 
 .login-btn:hover {
   --background: #4c6fff;
   --color: #ffffff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(76, 111, 255, 0.45);
 }
+
+.login-btn:hover::after {
+  transform: translateX(120%);
+}
+
+.login-btn:active {
+  transform: scale(0.97);
+}
+.login-btn {
+  animation: pulseBtn 3s ease-in-out infinite;
+}
+
+@keyframes pulseBtn {
+  0% { box-shadow: 0 0 0 rgba(76, 111, 255, 0); }
+  50% { box-shadow: 0 0 25px rgba(76, 111, 255, 0.4); }
+  100% { box-shadow: 0 0 0 rgba(76, 111, 255, 0); }
+}
+
