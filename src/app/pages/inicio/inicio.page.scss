@@ -1,3 +1,67 @@
+
+.login-btn {
+  height: 46px;
+  padding: 0 32px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  --background: linear-gradient(
+    135deg,
+    #4c6fff,
+    #3c39e6
+  );
+  --color: #ffffff;
+  --border-radius: 999px;
+
+  box-shadow: 0 10px 30px rgba(76, 111, 255, 0.55);
+}
+.nav-links a.active {
+  background: linear-gradient(
+    135deg,
+    #4c6fff,
+    #3c39e6
+  );
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(76, 111, 255, 0.6);
+}
+.nav-links a:hover {
+  color: #ffffff;
+  background: rgba(76, 111, 255, 0.15);
+  box-shadow: 0 0 18px rgba(76, 111, 255, 0.45);
+  transform: translateY(-2px);
+}
+.nav-links a {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #cfcfcf;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.hero-text h1 {
+  font-size: 72px;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  opacity: 0.9;
+}
+.hero {
+  gap: 60px;
+}
+
+.hero-visual img {
+  max-width: 520px;
+}
 .hero-text {
   animation: heroFade 1s ease forwards;
 }
